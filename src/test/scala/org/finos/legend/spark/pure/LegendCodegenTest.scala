@@ -128,7 +128,7 @@ class LegendCodegenTest extends AnyFlatSpec {
                      |    )
                      |  )
                      |)
-                     |""".stripMargin
+                     |""".replaceAll("\r","").stripMargin
     assert(observed == expected)
   }
 
@@ -171,7 +171,7 @@ class LegendCodegenTest extends AnyFlatSpec {
         |`root`.group_id as `groupId`,
         |`root`.artifact_id as `artifactId`,
         |`root`.version as `version`
-        |from maven.project as `root`""".stripMargin.replaceAll("\n", " ")
+        |from maven.project as `root`""".stripMargin.replaceAll("\r","").replaceAll("\n", " ")
     assert(observed == expected)
   }
 
